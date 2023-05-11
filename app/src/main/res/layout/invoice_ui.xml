@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <ir.beigirad.zigzagview.ZigzagView
+        android:id="@+id/zigzagView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:zigzagBackgroundColor="#f0f1f6"
+        app:zigzagElevation="2dp"
+        app:zigzagHeight="10dp"
+        app:zigzagPaddingContent="16dp"
+        app:zigzagShadowAlpha="0.9"
+        app:zigzagSides="top|bottom">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/imageCompanyLogo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/travel"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/imageQrCode"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_below="@+id/textContainer"
+                android:layout_alignParentEnd="true"
+                android:layout_marginVertical="24dp"
+                android:src="@drawable/qr_code"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textContainer"
+                android:layout_alignTop="@+id/imageQrCode"
+                android:layout_alignBottom="@+id/imageQrCode"
+                android:layout_marginEnd="77dp"
+                android:background="#4CAF50"
+                android:fontFamily="@font/nunito_semibold"
+                android:gravity="center"
+                android:layout_alignEnd="@+id/imageQrCode"
+                android:layout_alignParentStart="true"
+                android:text="EU-152548"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imageCompanyLogo"
+                android:layout_alignBottom="@+id/imageCompanyLogo"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@+id/imageCompanyLogo"
+                android:fontFamily="@font/nunito_bold"
+                android:gravity="center"
+                android:text="Travel Company"
+                android:textColor="#292929"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_below="@+id/imageCompanyLogo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="32dp"
+                android:background="#E91E63"
+                android:fontFamily="@font/nunito_semibold"
+                android:gravity="center"
+                android:text="Ticket Invoice"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+
+
+            <LinearLayout
+                android:id="@+id/textContainer"
+                android:layout_below="@+id/tvTitle"
+                android:layout_width="120dp"
+                android:layout_marginTop="18dp"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:layout_marginVertical="8dp"
+                    android:textColor="#777676"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seat"
+                    android:textColor="#777676"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:layout_marginVertical="8dp"
+                    android:textColor="#777676"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type"
+                    android:textColor="#777676"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From"
+                    android:textColor="#777676"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To"
+                    android:textColor="#777676"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:textColor="#777676"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/tvTitle"
+                android:layout_toEndOf="@+id/textContainer"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="18dp"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coder Odilov"
+                    android:layout_marginVertical="8dp"
+                    android:textColor="#393838"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24"
+                    android:textColor="#393838"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24.06.2023"
+                    android:layout_marginVertical="8dp"
+                    android:textColor="#393838"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bussines"
+                    android:textColor="#393838"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="United Kingdom"
+                    android:textColor="#393838"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ukraine"
+                    android:textColor="#393838"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="565.25 usd"
+                    android:background="#FFEB3B"
+                    android:textColor="#393838"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ir.beigirad.zigzagview.ZigzagView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btnDownload"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            android:src="@drawable/round_file_download_24"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:importantForAccessibility="no"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/round_mobile_screen_share_24"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
