@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-
 
     <ir.beigirad.zigzagview.ZigzagView
         android:id="@+id/zigzagView"
@@ -19,28 +19,26 @@
         app:zigzagShadowAlpha="0.9"
         app:zigzagSides="top|bottom">
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <ImageView
                 android:id="@+id/imageCompanyLogo"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/travel"
                 android:importantForAccessibility="no" />
 
             <ImageView
                 android:id="@+id/imageQrCode"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:scaleType="centerCrop"
                 android:layout_below="@+id/textContainer"
                 android:layout_alignParentEnd="true"
-                android:layout_marginVertical="24dp"
+                android:layout_marginVertical="16dp"
                 android:src="@drawable/qr_code"
                 android:importantForAccessibility="no" />
 
@@ -50,15 +48,15 @@
                 android:layout_below="@id/textContainer"
                 android:layout_alignTop="@+id/imageQrCode"
                 android:layout_alignBottom="@+id/imageQrCode"
-                android:layout_marginEnd="77dp"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/imageQrCode"
                 android:background="#4CAF50"
                 android:fontFamily="@font/nunito_semibold"
                 android:gravity="center"
-                android:layout_alignEnd="@+id/imageQrCode"
-                android:layout_alignParentStart="true"
                 android:text="EU-152548"
                 android:textColor="@color/white"
-                android:textSize="36dp" />
+                android:textSize="26dp"
+                tools:ignore="TextContrastCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,7 +69,7 @@
                 android:gravity="center"
                 android:text="Travel Company"
                 android:textColor="#292929"
-                android:textSize="26sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
 
@@ -79,14 +77,14 @@
                 android:id="@+id/tvTitle"
                 android:layout_below="@+id/imageCompanyLogo"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="32dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
                 android:background="#E91E63"
                 android:fontFamily="@font/nunito_semibold"
                 android:gravity="center"
                 android:text="Ticket Invoice"
                 android:textColor="#FFFFFF"
-                android:textSize="22sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
 
@@ -95,7 +93,7 @@
                 android:id="@+id/textContainer"
                 android:layout_below="@+id/tvTitle"
                 android:layout_width="120dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="16dp"
                 android:padding="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
@@ -108,7 +106,7 @@
                     android:layout_marginVertical="8dp"
                     android:textColor="#777676"
                     android:fontFamily="@font/nunito_semibold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -117,7 +115,7 @@
                     android:textColor="#777676"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_semibold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -126,7 +124,7 @@
                     android:layout_marginVertical="8dp"
                     android:textColor="#777676"
                     android:fontFamily="@font/nunito_semibold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -135,7 +133,7 @@
                     android:textColor="#777676"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_semibold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -144,7 +142,7 @@
                     android:textColor="#777676"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_semibold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -153,7 +151,7 @@
                     android:textColor="#777676"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_semibold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -162,7 +160,7 @@
                     android:textColor="#777676"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_semibold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -171,7 +169,7 @@
                 android:layout_toEndOf="@+id/textContainer"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="16dp"
                 android:padding="10dp"
                 android:background="@color/white"
                 android:layout_height="wrap_content">
@@ -183,7 +181,7 @@
                     android:layout_marginVertical="8dp"
                     android:textColor="#393838"
                     android:fontFamily="@font/nunito_bold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -192,7 +190,7 @@
                     android:textColor="#393838"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_bold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -201,7 +199,7 @@
                     android:layout_marginVertical="8dp"
                     android:textColor="#393838"
                     android:fontFamily="@font/nunito_bold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -210,7 +208,7 @@
                     android:textColor="#393838"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_bold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -219,7 +217,7 @@
                     android:textColor="#393838"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_bold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -228,7 +226,7 @@
                     android:textColor="#393838"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_bold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -236,9 +234,10 @@
                     android:text="565.25 usd"
                     android:background="#FFEB3B"
                     android:textColor="#393838"
+                    android:paddingStart="5dp"
                     android:layout_marginVertical="8dp"
                     android:fontFamily="@font/nunito_bold"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -251,7 +250,7 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="end"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp">
 
         <ImageButton
             android:id="@+id/btnDownload"
@@ -259,7 +258,6 @@
             android:layout_height="40dp"
             android:layout_gravity="end"
             android:layout_marginEnd="6dp"
-            android:layout_marginBottom="12dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
@@ -271,7 +269,6 @@
             android:layout_height="40dp"
             android:layout_gravity="end"
             android:layout_marginEnd="18dp"
-            android:layout_marginBottom="12dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:importantForAccessibility="no"
             android:padding="5dp"

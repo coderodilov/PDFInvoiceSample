@@ -2,18 +2,21 @@ package uz.coderodilov.pdfinvoice
 
 import android.app.Dialog
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.pdf.PdfDocument
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import uz.coderodilov.pdfinvoice.databinding.ActivityMainBinding
+import uz.coderodilov.pdfinvoice.databinding.InvoiceUiBinding
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -50,42 +53,43 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun invoiceDialog(){
         val dialog = Dialog(this)
+        val dialogBinding = InvoiceUiBinding.inflate(layoutInflater)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.invoice_ui)
-        dialog.setCancelable(false)
+
+        dialog.setContentView(dialogBinding.root)
+        dialog.setCancelable(true)
 
         val layoutParams = WindowManager.LayoutParams()
-        layoutParams.copyFrom(dialog.window!!.attributes)
+        layoutParams.copyFrom(dialog.window?.attributes)
         layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT
         layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
 
         dialog.window!!.attributes = layoutParams
 
-        val download = dialog.findViewById<ImageView>(R.id.btnDownload)
-
         dialog.show()
 
-        download.setOnClickListener{
+        dialogBinding.btnDownload.setOnClickListener{
             generatePdfFromView(dialog.findViewById(R.id.zigzagView))
             dialog.dismiss()
         }
     }
 
-
     private fun generatePdfFromView(view: View) {
-     // val viewBitmap = getBitmapFromView(view)
+        val viewBitmap = getBitmapFromView(view)
         document = PdfDocument()
-        val pageInfo = PdfDocument.PageInfo.Builder(view.width, view.height, 1).create()
+        val pageInfo = PdfDocument.PageInfo.Builder(viewBitmap.width, viewBitmap.height, 1).create()
         val myPage = document.startPage(pageInfo)
         val canvas = myPage.canvas
-        view.draw(canvas)
-     // canvas.drawBitmap(viewBitmap, 0f, 0f, null)
+     // view.draw(canvas)
+        canvas.drawBitmap(viewBitmap, 0f, 0f, null)
         document.finishPage(myPage)
         createAndSaveFile(document)
         document.close()
     }
+
 
     private fun createAndSaveFile(document: PdfDocument) {
         val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
@@ -99,8 +103,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-    /*
     private fun getBitmapFromView(view: View) : Bitmap {
         val returnedBitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(returnedBitmap)
@@ -110,6 +112,5 @@ class MainActivity : AppCompatActivity() {
         view.draw(canvas)
         return returnedBitmap
     }
-     */
 
 }
